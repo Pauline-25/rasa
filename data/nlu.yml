@@ -23,19 +23,6 @@ nlu:
     - non
     - pas du tout
     - je ne pense pas
-- intent: mood_great
-  examples: |
-    - superbe
-    - parfait
-    - je me sens très bien
-- intent: mood_unhappy
-  examples: |
-    - je suis triste
-    - ma journée était horrible
-- intent: bot_challenge
-  examples: |
-    - êtes-vous un robot ?
-    - est-ce que je parle à un humain ?
 - intent: give_age
   examples: |
     - J'ai [12](age) ans
@@ -49,10 +36,10 @@ nlu:
     - J'ai [22](age) ans
     - [22](age)
     - Je m'appelle [Simon](name) et j'ai [26](age) ans
-    - Je m'appelle [Simon](name) et j'ai [26](age) ans
+    - [26](age) ans
 - intent: give_name
   examples: |
-    - Je m'appelle [bebou](name)
+    - Je m'appelle [pauline](name)
     - Je m'appelle [simon](name)
     - Mon nom est [julie](name)
     - Mon nom est [Isabelle](name)
@@ -63,6 +50,7 @@ nlu:
     - Je voudrais m'inscrire
     - Je souhaite m'inscrire
     - je veux m'inscrire
+    - Je veux m'inscrire. je m'appelle [Simon](name)
 - regex: age
   examples: |
     - [0-100]

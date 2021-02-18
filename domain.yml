@@ -4,14 +4,11 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - give_age
-- wanna_subscribe
 - greet
-- bot_challenge
+- wanna_subscribe
 - goodbye
 - affirm
 - deny
-- mood_great
-- mood_unhappy
 - give_name
 entities:
 - age
@@ -26,13 +23,6 @@ slots:
 responses:
   utter_greet:
   - text: Bonjour ! Comment puis-je vous aider ?
-  utter_cheer_up:
-  - text: "J'ai quelque chose pour te remonter le moral :"
-    image: https://i.imgur.com/nGF1K8f.jpg
-  utter_did_that_help:
-  - text: Ca a aidé ?
-  utter_happy:
-  - text: Super, bon courage !
   utter_goodbye:
   - text: Au revoir !
   utter_iamabot:
@@ -45,7 +35,6 @@ responses:
   - text: Très bien {name} ({age} ans), merci pour ces informations !
 actions:
 - utter_greet
-- utter_iamabot
 - utter_slots_values_name_age
 forms:
   name_and_age_form:
