@@ -6,8 +6,8 @@ stories:
   steps:
   - user: |
       hello there!
-    intent: greet
-  - action: utter_greet
+    intent: bonjour
+  - action: utter_bonjour
   - user: |
       amazing
     intent: mood_great
@@ -17,23 +17,23 @@ stories:
   steps:
   - user: |
       hello there!
-    intent: greet
-  - action: utter_greet
+    intent: bonjour
+  - action: utter_bonjour
   - user: |
       amazing
     intent: mood_great
   - action: utter_happy
   - user: |
       bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+    intent: aurevoir
+  - action: utter_aurevoir
 
 - story: sad path 1
   steps:
   - user: |
       hello
-    intent: greet
-  - action: utter_greet
+    intent: bonjour
+  - action: utter_bonjour
   - user: |
       not good
     intent: mood_unhappy
@@ -48,8 +48,8 @@ stories:
   steps:
   - user: |
       hello
-    intent: greet
-  - action: utter_greet
+    intent: bonjour
+  - action: utter_bonjour
   - user: |
       not good
     intent: mood_unhappy
@@ -58,14 +58,14 @@ stories:
   - user: |
       not really
     intent: deny
-  - action: utter_goodbye
+  - action: utter_aurevoir
 
 - story: sad path 3
   steps:
   - user: |
       hi
-    intent: greet
-  - action: utter_greet
+    intent: bonjour
+  - action: utter_bonjour
   - user: |
       very terrible
     intent: mood_unhappy
@@ -74,14 +74,14 @@ stories:
   - user: |
       no
     intent: deny
-  - action: utter_goodbye
+  - action: utter_aurevoir
 
-- story: say goodbye
+- story: say aurevoir
   steps:
   - user: |
       bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+    intent: aurevoir
+  - action: utter_aurevoir
 
 - story: bot challenge
   steps:

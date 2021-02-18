@@ -2,23 +2,49 @@ version: "2.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Dire au revoir quand l'utilisateur dit au revoir
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: aurevoir
+  - action: utter_aurevoir
 
-- rule: Active age name form
+# - rule: Active age name form
+#   steps:
+#   - intent: wanna_subscribe
+#   - action: name_and_age_form
+#   - active_loop: name_and_age_form
+
+# - rule: Submit age name form
+#   condition:
+#   - active_loop: name_and_age_form
+#   steps:
+#   - action: name_and_age_form
+#   - active_loop: null
+#   - slot_was_set: 
+#     - requested_slot: null
+#   - action: utter_slots_values_name_age
+
+- rule: info visa
+  steps: 
+  - intent: info_visa_schenghen
+  - action: utter_info_visa_schenghen
+
+- rule: duree traitement demande
   steps:
-  - intent: wanna_subscribe
-  - action: name_and_age_form
-  - active_loop: name_and_age_form
+  - intent: duree_traitement_demande
+  - action: utter_duree_traitement_demande
 
-- rule: Submit age name form
+- rule: Activer form visa
+  steps:
+  - intent: demande_de_visa
+  - action: demande_de_visa_form
+  - active_loop: demande_de_visa_form
+
+- rule: Soumettre form visa
   condition:
-  - active_loop: name_and_age_form
+  - active_loop: demande_de_visa_form
   steps:
-  - action: name_and_age_form
+  - action: demande_de_visa_form
   - active_loop: null
-  - slot_was_set: 
+  - slot_was_set:
     - requested_slot: null
-  - action: utter_slots_values_name_age
+  - action: utter_recap_demande

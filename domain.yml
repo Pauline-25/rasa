@@ -3,44 +3,56 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- give_age
-- greet
-- wanna_subscribe
-- goodbye
+- demande_de_visa
+- give_nombre_jour
+- bonjour
+# - wanna_subscribe
+- aurevoir
 - affirm
 - deny
 - give_name
+- info_visa_schenghen
+- duree_traitement_demande
 entities:
-- age
 - name
+- nombre_jour
 slots:
   name:
     type: text
     influence_conversation: true
-  age:
+  nombre_jour:
     type: text
     influence_conversation: true
 responses:
-  utter_greet:
+  utter_bonjour:
   - text: Bonjour ! Comment puis-je vous aider ?
-  utter_goodbye:
+  utter_aurevoir:
   - text: Au revoir !
   utter_iamabot:
   - text: Je suis un robot par Rasa.
-  utter_ask_age:
-  - text: Quel âge avez-vous ?
   utter_ask_name:
   - text: Quel est votre prénom ?
   utter_slots_values_name_age:
-  - text: Très bien {name} ({age} ans), merci pour ces informations !
+  - text: Très bien {name}, merci pour ces informations !
+  utter_info_visa_schenghen:
+  - text: Un visa Schengen est un visa court séjour qui permet à une personne de voyager dans tous les pays de l’espace Schengen pour une période de 90 jours maximum dans un but touristique ou professionnel.
+  utter_duree_traitement_demande:
+  - text: Même si cela ne prend pas plus de 24-48 heures pour traiter un visa en général, il y a des cas où ce processus prend beaucoup plus long, de 14 jusqu’à 21 jours dans certains pays concernant certains citoyens.
+  utter_ask_nombre_jour:
+  - text: Combien de temps comptez-vous passer dans l'espace Schengen ?
+  utter_recap_demande:
+  - text: Merci, votre demande de visa pour {nombre_jour} jours a bien été prise en compte.
 actions:
-- utter_greet
+- utter_ask_nombre_jour
+- utter_bonjour
+- utter_recap_demande
 - utter_slots_values_name_age
 forms:
   name_and_age_form:
-    age:
-    - type: from_entity
-      entity: age
     name:
     - type: from_entity
       entity: name
+  demande_de_visa_form:
+    nombre_jour:
+    - type: from_entity
+      entity: nombre_jour
