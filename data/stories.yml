@@ -1,0 +1,85 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: give_age
+#     entities:
+#     - age: '22'
+
+# - story: form age name
+#   steps:
+#   - intent: wanna_subscribe
+#   - action: name_and_age_form
+#   - slot_was_set:
+#     - name: "Michel"
+#   - slot_was_set:
+#     - age: "38"
+#   - action: utter_slots_values_name_age
+  
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: wanna_subscribe
+#   - action: name_and_age_form
+#   - active_loop: name_and_age_form
+#   - slot_was_set:
+#     - requested_slot: age
+#   - intent: give_age
+#     entities:
+#     - '"age"': '22'
+#   - intent: give_age
+#     entities:
+#     - '"age"': '22'
+
+- story: Simon 26
+  steps:
+  - intent: give_age
+    entities:
+    - name: Simon
+    - age: '26'
+  - slot_was_set:
+    - name: Simon
+  - slot_was_set:
+    - age: '26'
+  - action: utter_slots_values_name_age

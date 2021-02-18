@@ -1,0 +1,29 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Active age name form
+  steps:
+  - intent: wanna_subscribe
+  - action: name_and_age_form
+  - active_loop: name_and_age_form
+
+- rule: Submit age name form
+  condition:
+  - active_loop: name_and_age_form
+  steps:
+  - action: name_and_age_form
+  - active_loop: null
+  - slot_was_set: 
+    - requested_slot: null
+  - action: utter_slots_values_name_age

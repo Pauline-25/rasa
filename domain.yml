@@ -1,0 +1,57 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- give_age
+- wanna_subscribe
+- greet
+- bot_challenge
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- give_name
+entities:
+- age
+- name
+slots:
+  name:
+    type: text
+    influence_conversation: true
+  age:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Bonjour ! Comment puis-je vous aider ?
+  utter_cheer_up:
+  - text: "J'ai quelque chose pour te remonter le moral :"
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Ca a aidé ?
+  utter_happy:
+  - text: Super, bon courage !
+  utter_goodbye:
+  - text: Au revoir !
+  utter_iamabot:
+  - text: Je suis un robot par Rasa.
+  utter_ask_age:
+  - text: Quel âge avez-vous ?
+  utter_ask_name:
+  - text: Quel est votre prénom ?
+  utter_slots_values_name_age:
+  - text: Très bien {name} ({age} ans), merci pour ces informations !
+actions:
+- utter_greet
+- utter_iamabot
+- utter_slots_values_name_age
+forms:
+  name_and_age_form:
+    age:
+    - type: from_entity
+      entity: age
+    name:
+    - type: from_entity
+      entity: name

@@ -1,0 +1,68 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - Bonjour
+    - Salut
+    - Hello
+    - bonjour
+- intent: goodbye
+  examples: |
+    - Au revoir
+    - Bonne nuit
+    - A la prochaine
+- intent: affirm
+  examples: |
+    - oui
+    - exactement
+    - très bien
+    - c'est sûr
+    - en effet
+- intent: deny
+  examples: |
+    - non
+    - pas du tout
+    - je ne pense pas
+- intent: mood_great
+  examples: |
+    - superbe
+    - parfait
+    - je me sens très bien
+- intent: mood_unhappy
+  examples: |
+    - je suis triste
+    - ma journée était horrible
+- intent: bot_challenge
+  examples: |
+    - êtes-vous un robot ?
+    - est-ce que je parle à un humain ?
+- intent: give_age
+  examples: |
+    - J'ai [12](age) ans
+    - J'ai [24](age) ans
+    - Mon âge est [38](age)
+    - Je suis âgé de [43](age) ans
+    - Je suis âgée de [37](age) ans
+    - J'ai [22](age) ans !
+    - [35](age) ans
+    - [18](age)
+    - J'ai [22](age) ans
+    - [22](age)
+    - Je m'appelle [Simon](name) et j'ai [26](age) ans
+    - Je m'appelle [Simon](name) et j'ai [26](age) ans
+- intent: give_name
+  examples: |
+    - Je m'appelle [bebou](name)
+    - Je m'appelle [simon](name)
+    - Mon nom est [julie](name)
+    - Mon nom est [Isabelle](name)
+    - [Eric](name)
+- intent: wanna_subscribe
+  examples: |
+    - Je veux m'inscrire
+    - Je voudrais m'inscrire
+    - Je souhaite m'inscrire
+    - je veux m'inscrire
+- regex: age
+  examples: |
+    - [0-100]
