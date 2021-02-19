@@ -1,3 +1,4 @@
 .vscode
 venv
 models/*
+story_graph.dot

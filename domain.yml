@@ -3,23 +3,15 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- demande_de_visa
 - give_nombre_jour
-- bonjour
-# - wanna_subscribe
-- aurevoir
-- affirm
-- deny
-- give_name
+- demande_de_visa
 - info_visa_schenghen
+- bonjour
+- aurevoir
 - duree_traitement_demande
 entities:
-- name
 - nombre_jour
 slots:
-  name:
-    type: text
-    influence_conversation: true
   nombre_jour:
     type: text
     influence_conversation: true
@@ -28,30 +20,26 @@ responses:
   - text: Bonjour ! Comment puis-je vous aider ?
   utter_aurevoir:
   - text: Au revoir !
-  utter_iamabot:
-  - text: Je suis un robot par Rasa.
-  utter_ask_name:
-  - text: Quel est votre prénom ?
-  utter_slots_values_name_age:
-  - text: Très bien {name}, merci pour ces informations !
   utter_info_visa_schenghen:
   - text: Un visa Schengen est un visa court séjour qui permet à une personne de voyager dans tous les pays de l’espace Schengen pour une période de 90 jours maximum dans un but touristique ou professionnel.
   utter_duree_traitement_demande:
-  - text: Même si cela ne prend pas plus de 24-48 heures pour traiter un visa en général, il y a des cas où ce processus prend beaucoup plus long, de 14 jusqu’à 21 jours dans certains pays concernant certains citoyens.
+  - text: En géneral, le traitement de la demande dure entre 24 et 48 heures. Il y a néanmoins des cas où ce processus prend beaucoup plus de temps, de 14 jusqu’à 21 jours dans certains pays pour certains citoyens.
   utter_ask_nombre_jour:
   - text: Combien de temps comptez-vous passer dans l'espace Schengen ?
   utter_recap_demande:
   - text: Merci, votre demande de visa pour {nombre_jour} jours a bien été prise en compte.
+  # utter_ask_raison_voyage:
+  # - buttons:
+  #   - payload: Tourisme
+  #     title: Tourisme 
+  #   - payload: Raison médicale
+  #     title: Raison médicale
 actions:
 - utter_ask_nombre_jour
 - utter_bonjour
+- utter_info_visa_schenghen
 - utter_recap_demande
-- utter_slots_values_name_age
 forms:
-  name_and_age_form:
-    name:
-    - type: from_entity
-      entity: name
   demande_de_visa_form:
     nombre_jour:
     - type: from_entity

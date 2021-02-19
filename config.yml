@@ -1,5 +1,5 @@
-# # Configuration for Rasa NLU.
-# # https://rasa.com/docs/rasa/nlu/components/
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
 language: fr
 
 pipeline:

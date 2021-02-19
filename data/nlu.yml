@@ -11,51 +11,33 @@ nlu:
     - Au revoir
     - Bonne nuit
     - A la prochaine
-- intent: affirm
-  examples: |
-    - oui
-    - exactement
-    - très bien
-    - c'est sûr
-    - en effet
-- intent: deny
-  examples: |
-    - non
-    - pas du tout
-    - je ne pense pas
-- intent: give_name
-  examples: |
-    - Je m'appelle [pauline](name)
-    - Je m'appelle [simon](name)
-    - Mon nom est [julie](name)
-    - Mon nom est [Isabelle](name)
-    - [Eric](name)
-# - intent: wanna_subscribe
-#   examples: |
-#     - Je veux m'inscrire
-#     - Je voudrais m'inscrire
-#     - Je souhaite m'inscrire
-#     - je veux m'inscrire
-#     - Je veux m'inscrire. je m'appelle [Simon](name)
 - intent: info_visa_schenghen
   examples: |
     - Qu’est-ce qu’un visa Schenghen ?
     - info visa Schenghen
     - définition visa schenghen
     - informations visa Schenghen
+    - qu'est ce qu'un visa schenghen ?
+    - c'est quoi un visa schenghen? 
+    - ah et c'est quoi un visa Schenghen au juste ?
 - intent: duree_traitement_demande
   examples: |
     - En combien de temps la demande est traitée ?
     - Combien de temps pour que la demande soit traitée
     - Durée obtention visa
-    - Comment il faut de temps pour que la demande soit traitée
+    - Combien il faut de temps pour que la demande soit traitée
+    - la demande est traitée en combien de temps?
+    - il faut combien de temps pour que la demande soit traitée au fait ?
+    - ça prend combien de temps pour obtenir le visa? 
 - intent: give_nombre_jour
   examples: |
-    -  Je compte rester [8](nombre_jour) jours
-    -  Mon séjour durera [40](nombre_jour) jours
+    - Je compte rester [8](nombre_jour) jours
+    - Mon séjour durera [40](nombre_jour) jours
+    - je vais rester [23](nombre_jour) jours dans l'espace schenghen
+    - [30](nombre_jour) jours a priori
     - [5](nombre_jour)
     - [6](nombre_jour) jours
-    - [10](nombre_jour) jours
+    - [10](nombre_jour) jour
 - intent: demande_de_visa
   examples: |
     - J'aimerais souscrire à un visa Schenghen
@@ -66,10 +48,5 @@ nlu:
     - je veux demander le visa schenghen
     - formulaire demande visa
     - je veux faire la demande de visa. Je compte rester [7](nombre_jour) jours
-    - je veux faire la demande de visa. Mon nséjour durera [23](nombre_jour) jours
-- regex: age
-  examples: |
-    - [0-100]
-- regex: nombre_jour
-  examples: |
-    - [0-2000]
+    - je veux faire la demande de visa svp. Mon nséjour durera [23](nombre_jour) jours
+    - je veux un visa schenghen

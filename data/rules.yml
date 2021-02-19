@@ -7,22 +7,6 @@ rules:
   - intent: aurevoir
   - action: utter_aurevoir
 
-# - rule: Active age name form
-#   steps:
-#   - intent: wanna_subscribe
-#   - action: name_and_age_form
-#   - active_loop: name_and_age_form
-
-# - rule: Submit age name form
-#   condition:
-#   - active_loop: name_and_age_form
-#   steps:
-#   - action: name_and_age_form
-#   - active_loop: null
-#   - slot_was_set: 
-#     - requested_slot: null
-#   - action: utter_slots_values_name_age
-
 - rule: info visa
   steps: 
   - intent: info_visa_schenghen

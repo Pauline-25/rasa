@@ -12,75 +12,6 @@ stories:
   - intent: aurevoir
   - action: utter_aurevoir
 
-# - story: interactive_story_1
-#   steps:
-#   - intent: give_age
-#     entities:
-#     - age: '22'
-
-# - story: form age name
-#   steps:
-#   - intent: wanna_subscribe
-#   - action: name_and_age_form
-#   - slot_was_set:
-#     - name: "Michel"
-#   - slot_was_set:
-#     - age: "38"
-#   - action: utter_slots_values_name_age
-  
-
-# - story: interactive_story_1
-#   steps:
-#   - intent: wanna_subscribe
-#   - action: name_and_age_form
-#   - active_loop: name_and_age_form
-#   - slot_was_set:
-#     - requested_slot: age
-#   - intent: give_age
-#     entities:
-#     - '"age"': '22'
-#   - intent: give_age
-#     entities:
-#     - '"age"': '22'
-
-# - story: Simon 26
-#   steps:
-#   - intent: give_age
-#     entities:
-#     - name: Simon
-#     - age: '26'
-#   - slot_was_set:
-#     - name: Simon
-#   - slot_was_set:
-#     - age: '26'
-#   - action: utter_slots_values_name_age
-
-# - story: Simon 26 ans
-#   steps:
-#   - intent: bonjour
-#   - action: utter_bonjour
-#   - intent: wanna_subscribe
-#     entities:
-#     - name: Simon
-#   - slot_was_set:
-#     - name: Simon
-#   - action: name_and_age_form
-#   - active_loop: name_and_age_form
-#   - slot_was_set:
-#     - name: Simon
-#   - slot_was_set:
-#     - name: Simon
-#   - slot_was_set:
-#     - requested_slot: age
-#   - slot_was_set:
-#     - age: '26'
-#   - slot_was_set:
-#     - age: '26'
-#   - slot_was_set:
-#     - requested_slot: null
-#   - active_loop: null
-#   - action: utter_slots_values_name_age
-
 - story: demande info visa Schenghen
   steps:
   - intent: bonjour
@@ -96,61 +27,6 @@ stories:
   - action: utter_duree_traitement_demande
   - intent: aurevoir
   - action: utter_aurevoir
-
-# - story: demande de visa form
-#   steps:
-#   - intent: demande_de_visa
-#   - action: demande_de_visa_form
-#   - slot_was_set:
-#     - nombre_jour: "38"
-#   - action: utter_recap_demande
-
-# - story: interactive_story_1
-#   steps:
-#   - intent: demande_de_visa
-  #   entities:
-  #   - nombre_jour: '7'
-  # - slot_was_set:
-  #   - nombre_jour: '7'
-  # - action: demande_de_visa_form
-  # - active_loop: demande_de_visa_form
-  # - slot_was_set:
-  #   - nombre_jour: '7'
-  # - slot_was_set:
-  #   - nombre_jour: '7'
-  # - slot_was_set:
-  #   - requested_slot: null
-  # - active_loop: null
-  # - action: utter_recap_demande
-
-# - story: interactive_story_1
-#   steps:
-#   - intent: demande_de_visa
-#   - action: demande_de_visa_form
-#   - active_loop: demande_de_visa_form
-#   - slot_was_set:
-#     - requested_slot: nombre_jour
-#   - action: utter_ask_nombre_jour
-#   - intent: give_nombre_jour
-#     entities:
-#     - nombre_jour: '5'
-#   - slot_was_set:
-#     - nombre_jour: '5'
-#   - action: utter_recap_demande
-
-# - story: interactive_story_1
-#   steps:
-#   - intent: demande_de_visa
-#   - action: demande_de_visa_form
-#   - active_loop: demande_de_visa_form
-#   - slot_was_set:
-#     - requested_slot: nombre_jour
-#   - intent: give_nombre_jour
-#     entities:
-#     - nombre_jour: '6'
-#   - slot_was_set:
-#     - nombre_jour: '6'
-#   - action: utter_slots_values_name_age
 
 - story: demande de visa form
   steps:
@@ -181,6 +57,27 @@ stories:
     - nombre_jour: '23'
   - slot_was_set:
     - nombre_jour: '23'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_recap_demande
+
+- story: demande de visa form avec interaction
+  steps:
+  - intent: demande_de_visa
+  - action: demande_de_visa_form
+  - active_loop: demande_de_visa_form
+  - slot_was_set:
+    - requested_slot: nombre_jour
+  - intent: info_visa_schenghen
+  - action: utter_info_visa_schenghen
+  - action: demande_de_visa_form
+  - slot_was_set:
+    - requested_slot: nombre_jour
+  - slot_was_set:
+    - nombre_jour: '10'
+  - slot_was_set:
+    - nombre_jour: '10'
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
