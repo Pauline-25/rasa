@@ -6,7 +6,7 @@ intents:
 - give_nombre_jour
 - demande_de_visa
 - duree_traitement_demande
-- info_visa_schenghen
+- info_visa_schengen
 - bonjour
 - aurevoir
 entities:
@@ -23,8 +23,8 @@ responses:
   - text: Bonjour ! Comment puis-je vous aider ?
   utter_aurevoir:
   - text: Au revoir !
-  utter_info_visa_schenghen:
-  - text: Un visa Schengen est un visa court séjour qui permet à une personne de voyager dans tous les pays de l’espace Schengen pour une période de 90 jours maximum dans un but touristique ou professionnel.
+  utter_info_visa_schengen:
+  - text: Un visa Schengen est un visa court séjour qui permet à une personne de voyager dans tous les pays de l’espace Schengen pour une période de 90 jours maximum.
   utter_duree_traitement_demande:
   - text: En général, le traitement de la demande dure entre 24 et 48 heures. Il y a néanmoins des cas où ce processus prend beaucoup plus de temps, de 14 jusqu’à 21 jours dans certains pays pour certains citoyens.
   utter_ask_nombre_jour:
@@ -53,7 +53,7 @@ responses:
 actions:
 - utter_ask_nombre_jour
 - utter_bonjour
-- utter_info_visa_schenghen
+- utter_info_visa_schengen
 - utter_recap_demande
 forms:
   demande_de_visa_form:

@@ -11,15 +11,15 @@ nlu:
     - Au revoir
     - Bonne nuit
     - A la prochaine
-- intent: info_visa_schenghen
+- intent: info_visa_schengen
   examples: |
-    - Qu’est-ce qu’un visa Schenghen ?
-    - info visa Schenghen
-    - définition visa schenghen
-    - informations visa Schenghen
-    - qu'est ce qu'un visa schenghen ?
-    - c'est quoi un visa schenghen?
-    - ah et c'est quoi un visa Schenghen au juste ?
+    - Qu’est-ce qu’un visa Schengen ?
+    - info visa Schengen
+    - définition visa schengen
+    - informations visa Schengen
+    - qu'est ce qu'un visa schengen ?
+    - c'est quoi un visa schengen?
+    - ah et c'est quoi un visa Schengen au juste ?
 - intent: duree_traitement_demande
   examples: |
     - En combien de temps la demande est traitée ?
@@ -33,21 +33,21 @@ nlu:
   examples: |
     - Je compte rester [8](nombre_jour) jours
     - Mon séjour durera [40](nombre_jour) jours
-    - je vais rester [23](nombre_jour) jours dans l'espace schenghen
+    - je vais rester [23](nombre_jour) jours dans l'espace schengen
     - [30](nombre_jour) jours a priori
     - [5](nombre_jour)
     - [6](nombre_jour) jours
     - [10](nombre_jour) jour
 - intent: demande_de_visa
   examples: |
-    - J'aimerais souscrire à un visa Schenghen
+    - J'aimerais souscrire à un visa Schengen
     - Je veux faire la demande de visa
     - souscrire visa
     - demande visa
     - je veux demander le visa
-    - je veux demander le visa schenghen
+    - je veux demander le visa schengen
     - formulaire demande visa
     - je veux faire la demande de visa. Je compte rester [7](nombre_jour) jours
     - je veux faire la demande de visa svp. Mon nséjour durera [23](nombre_jour) jours
-    - je veux un visa schenghen
-    - je voudrais un visa schenghen
+    - je veux un visa schengen
+    - je voudrais un visa schengen

@@ -12,12 +12,12 @@ stories:
   - intent: aurevoir
   - action: utter_aurevoir
 
-- story: demande info visa Schenghen
+- story: demande info visa Schengen
   steps:
   - intent: bonjour
   - action: utter_bonjour
-  - intent: info_visa_schenghen
-  - action: utter_info_visa_schenghen
+  - intent: info_visa_schengen
+  - action: utter_info_visa_schengen
 
 - story: demande info temps visa
   steps:
@@ -33,8 +33,8 @@ stories:
   - active_loop: demande_de_visa_form
   - slot_was_set:
     - requested_slot: nombre_jour
-  - intent: info_visa_schenghen
-  - action: utter_info_visa_schenghen
+  - intent: info_visa_schengen
+  - action: utter_info_visa_schengen
   - action: demande_de_visa_form
   - slot_was_set:
     - requested_slot: nombre_jour

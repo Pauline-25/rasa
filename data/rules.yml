@@ -9,8 +9,8 @@ rules:
 
 - rule: info visa
   steps: 
-  - intent: info_visa_schenghen
-  - action: utter_info_visa_schenghen
+  - intent: info_visa_schengen
+  - action: utter_info_visa_schengen
 
 - rule: duree traitement demande
   steps:
