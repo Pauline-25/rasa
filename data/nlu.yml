@@ -18,7 +18,7 @@ nlu:
     - définition visa schenghen
     - informations visa Schenghen
     - qu'est ce qu'un visa schenghen ?
-    - c'est quoi un visa schenghen? 
+    - c'est quoi un visa schenghen?
     - ah et c'est quoi un visa Schenghen au juste ?
 - intent: duree_traitement_demande
   examples: |
@@ -28,7 +28,7 @@ nlu:
     - Combien il faut de temps pour que la demande soit traitée
     - la demande est traitée en combien de temps?
     - il faut combien de temps pour que la demande soit traitée au fait ?
-    - ça prend combien de temps pour obtenir le visa? 
+    - ça prend combien de temps pour obtenir le visa?
 - intent: give_nombre_jour
   examples: |
     - Je compte rester [8](nombre_jour) jours
@@ -50,3 +50,4 @@ nlu:
     - je veux faire la demande de visa. Je compte rester [7](nombre_jour) jours
     - je veux faire la demande de visa svp. Mon nséjour durera [23](nombre_jour) jours
     - je veux un visa schenghen
+    - je voudrais un visa schenghen

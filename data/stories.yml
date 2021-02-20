@@ -21,48 +21,12 @@ stories:
 
 - story: demande info temps visa
   steps:
-  - intent: bonjour
-  - action: utter_bonjour
   - intent: duree_traitement_demande
   - action: utter_duree_traitement_demande
   - intent: aurevoir
   - action: utter_aurevoir
 
-- story: demande de visa form
-  steps:
-  - intent: demande_de_visa
-  - action: demande_de_visa_form
-  - active_loop: demande_de_visa_form
-  - slot_was_set:
-    - requested_slot: nombre_jour
-  - slot_was_set:
-    - nombre_jour: '10'
-  - slot_was_set:
-    - nombre_jour: '10'
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_recap_demande
-
-- story: demande de visa deja remplie form
-  steps:
-  - intent: demande_de_visa
-    entities:
-    - nombre_jour: '23'
-  - slot_was_set:
-    - nombre_jour: '23'
-  - action: demande_de_visa_form
-  - active_loop: demande_de_visa_form
-  - slot_was_set:
-    - nombre_jour: '23'
-  - slot_was_set:
-    - nombre_jour: '23'
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_recap_demande
-
-- story: demande de visa form avec interaction
+- story: demande de visa form avec coupure
   steps:
   - intent: demande_de_visa
   - action: demande_de_visa_form
@@ -82,3 +46,23 @@ stories:
     - requested_slot: null
   - active_loop: null
   - action: utter_recap_demande
+
+# - story: demande visa boutons
+#   steps:
+#   - intent: demande_de_visa
+#   - action: demande_de_visa_form
+#   - active_loop: demande_de_visa_form
+#   - slot_was_set:
+#     - requested_slot: nombre_jour
+#   - slot_was_set:
+#     - nombre_jour: '5'
+#   - slot_was_set:
+#     - nombre_jour: '5'
+#   - slot_was_set:
+#     - requested_slot: raison_voyage
+#   - slot_was_set:
+#     - raison_voyage: Événements culturels et sportifs
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_recap_demande

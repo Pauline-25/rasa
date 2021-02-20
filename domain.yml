@@ -5,16 +5,19 @@ session_config:
 intents:
 - give_nombre_jour
 - demande_de_visa
+- duree_traitement_demande
 - info_visa_schenghen
 - bonjour
 - aurevoir
-- duree_traitement_demande
 entities:
 - nombre_jour
 slots:
   nombre_jour:
     type: text
     influence_conversation: true
+  # raison_voyage:
+  #   type: text
+  #   influence_conversation: true
 responses:
   utter_bonjour:
   - text: Bonjour ! Comment puis-je vous aider ?
@@ -23,17 +26,30 @@ responses:
   utter_info_visa_schenghen:
   - text: Un visa Schengen est un visa court séjour qui permet à une personne de voyager dans tous les pays de l’espace Schengen pour une période de 90 jours maximum dans un but touristique ou professionnel.
   utter_duree_traitement_demande:
-  - text: En géneral, le traitement de la demande dure entre 24 et 48 heures. Il y a néanmoins des cas où ce processus prend beaucoup plus de temps, de 14 jusqu’à 21 jours dans certains pays pour certains citoyens.
+  - text: En général, le traitement de la demande dure entre 24 et 48 heures. Il y a néanmoins des cas où ce processus prend beaucoup plus de temps, de 14 jusqu’à 21 jours dans certains pays pour certains citoyens.
   utter_ask_nombre_jour:
   - text: Combien de temps comptez-vous passer dans l'espace Schengen ?
   utter_recap_demande:
   - text: Merci, votre demande de visa pour {nombre_jour} jours a bien été prise en compte.
-  # utter_ask_raison_voyage:
-  # - buttons:
-  #   - payload: Tourisme
-  #     title: Tourisme 
-  #   - payload: Raison médicale
-  #     title: Raison médicale
+  utter_ask_raison_voyage:
+  - buttons:
+    - payload: Tourisme et vacances
+      title: Tourisme et vacances
+    - payload: Raisons médicales
+      title: Raisons médicales
+    - payload: Raisons professionnelles
+      title: Raisons professionnelles
+    - payload: Visite d’amis ou de la famille
+      title: Visite d’amis ou de la famille
+    - payload: Événements culturels et sportifs
+      title: Événements culturels et sportifs
+    - payload: Transit aéroportuaire et maritime
+      title: Transit aéroportuaire et maritime
+    - payload: Visites officielles
+      title: Visites officielles
+    - payload: Études et recherches pour une courte période
+      title: Études et recherches pour une courte période
+    text: Pour quelle raison voyagez-vous ?
 actions:
 - utter_ask_nombre_jour
 - utter_bonjour
@@ -44,3 +60,5 @@ forms:
     nombre_jour:
     - type: from_entity
       entity: nombre_jour
+    # raison_voyage:
+    # - type: from_text
